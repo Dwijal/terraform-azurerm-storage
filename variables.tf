@@ -86,17 +86,6 @@ variable "soft_delete_retention_days" {
   }
 }
 
-variable "containers" {
-  description = "Map of blob containers to create. Key = container name, value = access type (private, blob, container)."
-  type        = map(string)
-  default     = {}
-
-  # Example:
-  # containers = {
-  #   "raw-data"    = "private"
-  #   "public-assets" = "blob"
-  # }
-}
 
 variable "network_rules_default_action" {
   description = "Default network rule action. Deny recommended in production."
