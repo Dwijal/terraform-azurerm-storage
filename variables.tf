@@ -126,3 +126,14 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "instance_count" {
+  description = "Number of storage accounts to create."
+  type        = number
+  default     = 1
+
+  validation {
+    condition     = var.instance_count >= 1 && var.instance_count <= 5
+    error_message = "instance_count must be between 1 and 5."
+  }
+}
